@@ -25,8 +25,14 @@ it("initial state email value=''", () => {
 	expect( wrapper.state('emailvalue') ).toBe('');
 });
 
-it("input change test", () => {
+it("input name input change test", () => {
   let wrapper = shallow(<App />);
   wrapper.find('.nameInput').simulate('change', {target: {value: 'My new value'}});
-  expect(wrapper.state('namevalue')).toBe('My new value')
+  expect(wrapper.state('namevalue')).toBe('My new value');
+});
+
+it("input email input change test", () => {
+  let wrapper = shallow(<App />);
+  wrapper.find('.emailInput').simulate('change', {target: {value: 'My new value'}});
+  expect(wrapper.state('emailvalue')).toBe('My new value')
 });

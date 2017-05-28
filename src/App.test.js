@@ -9,9 +9,10 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-it('renders input', () => {
+it('renders inputs', () => {
   let wrapper = shallow(<App />);
-  const input = <input />;
-  expect(wrapper.contains(input)).toBe(true);
-
+  const nameInput = <input placeholder='name'/>;
+  const emailInput = <input placeholder='email'/>;
+  expect(wrapper.contains(nameInput)).toBe(true);
+  expect(wrapper.contains(emailInput)).toBe(true);
 });

@@ -11,10 +11,8 @@ it('renders without crashing', () => {
 
 it('renders inputs', () => {
   let wrapper = shallow(<App />);
-  const nameInput = <input placeholder='name' value=""/>;
-  const emailInput = <input placeholder='email' value=""/>;
-  expect(wrapper.contains(nameInput)).toBe(true);
-  expect(wrapper.contains(emailInput)).toBe(true);
+  expect(wrapper.find('#nameInput')).to.have.length(1);
+  expect(wrapper.find('#emailInput')).to.have.length(1);
 });
 
 it("initial state name value=''", () => {
@@ -25,4 +23,9 @@ it("initial state name value=''", () => {
 it("initial state email value=''", () => {
   let wrapper = shallow(<App />);
 	expect( wrapper.state('emailvalue') ).toBe('');
+});
+
+it("input change test", () => {
+  let wrapper = shallow(<App />);
+  wrapper.find('#nameInput').simulate('change', {target: {value: 'My new value'}});
 });

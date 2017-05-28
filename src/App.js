@@ -14,8 +14,8 @@ class App extends Component {
 render() {
   return (
     <div className="App">
-    <input placeholder='name'  id="nameInput" value={this.state.namevalue} />
-    <input placeholder='email'  value={this.state.emailvalue} />
+    <input placeholder='name' className="nameInput" value={this.state.namevalue} />
+    <input placeholder='email' className="emailInput" value={this.state.emailvalue} />
     </div>
   )
 }

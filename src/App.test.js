@@ -11,8 +11,8 @@ it('renders without crashing', () => {
 
 it('renders inputs', () => {
   let wrapper = shallow(<App />);
-  expect(wrapper.find('#nameInput')).to.have.length(1);
-  expect(wrapper.find('#emailInput')).to.have.length(1);
+  expect(wrapper.find('.nameInput').length).toBe(1);
+  expect(wrapper.find('.emailInput').length).toBe(1);
 });
 
 it("initial state name value=''", () => {
@@ -27,5 +27,6 @@ it("initial state email value=''", () => {
 
 it("input change test", () => {
   let wrapper = shallow(<App />);
-  wrapper.find('#nameInput').simulate('change', {target: {value: 'My new value'}});
+  wrapper.find('.nameInput').simulate('change', {target: {value: 'My new value'}});
+  expect(wrapper.state('namevalue')).toBe('My new value')
 });

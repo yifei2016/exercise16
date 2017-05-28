@@ -6,8 +6,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      namevalue: '',
-      emailvalue:''
+      namevalue: ''
     }
 
   }
@@ -15,7 +14,7 @@ render() {
   return (
     <div className="App">
     <input placeholder='name'  value={this.state.namevalue} />
-    <input placeholder='email'  value={this.state.emailvalue} />
+    <input placeholder='email'  value="" />
     </div>
   )
 }

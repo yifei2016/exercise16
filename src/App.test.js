@@ -17,7 +17,12 @@ it('renders inputs', () => {
   expect(wrapper.contains(emailInput)).toBe(true);
 });
 
-it("initial state value=''", () => {
+it("initial state name value=''", () => {
   let wrapper = shallow(<App />);
 	expect( wrapper.state('namevalue') ).toBe('');
+});
+
+it("initial state email value=''", () => {
+  let wrapper = shallow(<App />);
+	expect( wrapper.state('emailvalue') ).toBe('');
 });

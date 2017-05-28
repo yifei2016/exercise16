@@ -9,16 +9,21 @@ class App extends Component {
       namevalue: '',
       emailvalue:''
     }
-
+    this.handleInputname = this.handleInputname.bind(this);
   }
-render() {
-  return (
-    <div className="App">
-    <input placeholder='name' className="nameInput" value={this.state.namevalue} />
-    <input placeholder='email' className="emailInput" value={this.state.emailvalue} />
-    </div>
-  )
-}
+  handleInputname(e){
+    this.setState({
+      namevalue: e.target.value
+    })
+  }
+  render() {
+    return (
+      <div className="App">
+      <input placeholder='name' className="nameInput" value={this.state.namevalue} onChange={this.handleInputname}/>
+      <input placeholder='email' className="emailInput" value={this.state.emailvalue} />
+      </div>
+    )
+  }
 }
 
 export default App;

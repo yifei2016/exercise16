@@ -1,7 +1,8 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
-import Button from './Button.js';
 import {shallow} from 'enzyme';
+import Button from './Button.js';
+
 
 it('renders without crashing', () => {
   shallow(<Button />).render();
@@ -9,6 +10,5 @@ it('renders without crashing', () => {
 
 it('renders button', () => {
   const wrapper = shallow(<Button />);
-  const button = <button></button>;
-  expect(wrapper.contains(button)).toBe(true);
+  expect(wrapper.find('.buttonClass').length).toBe(1);
 });

@@ -15,5 +15,5 @@ it('renders button', () => {
 
 it('test clear button to clear namevalue', () => {
   const wrapper = shallow(<Button />);
-  expect(wrapper.state('namevalue')).toBe('');
+  wrapper.find('.buttonClass').simulate('click');
 });

@@ -12,6 +12,7 @@ class App extends Component {
     }
     this.handleInputname = this.handleInputname.bind(this);
     this.handleInputemail = this.handleInputemail.bind(this);
+    this.clearButton =  this.clearButton.bind(this);
   }
   handleInputname(e){
     this.setState({
@@ -23,12 +24,18 @@ class App extends Component {
       emailvalue: e.target.value
     })
   }
+  clearButton(){
+    this.setState({
+      namevalue:'',
+      emailvalue:''
+    })
+  }
   render() {
     return (
       <div className="App">
       <input placeholder='name' className="nameInput" value={this.state.namevalue} onChange={this.handleInputname}/>
       <input placeholder='email' className="emailInput" value={this.state.emailvalue} onChange={this.handleInputemail}/>
-      <Button namevalue={this.state.namevalue}  emailvalue={this.state.emailvalue}/>
+      <Button clear={this.clearButton}/>
       </div>
     )
   }

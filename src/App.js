@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Button from './Button.js'
 import './App.css';
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
       <div className="App">
       <input placeholder='name' className="nameInput" value={this.state.namevalue} onChange={this.handleInputname}/>
       <input placeholder='email' className="emailInput" value={this.state.emailvalue} onChange={this.handleInputemail}/>
+      <Button namevalue={this.state.namevalue}  emailvalue={this.state.emailvalue}/>
       </div>
     )
   }

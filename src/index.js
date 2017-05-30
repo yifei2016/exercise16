@@ -7,8 +7,8 @@ import './index.css';
 
 ReactDOM.render(
   <div>
-  <App />,
-  <Button>
-  </div>
-  document.getElementById('root'));
+  <App />
+  </div>,
+  document.getElementById('root')
+);
 registerServiceWorker();
